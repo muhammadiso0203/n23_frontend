@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__title {
+  font-size: 48px;
+  color: #000;
+}
+
+.hero__text {
+  font-size: 21px;
+  color: #7d7987;
+}
+
+.service__title {
+  text-align: center;
+  font-size: 36px;
+  color: #000;
+}
+
+.service__text {
+  font-size: 18px;
+  text-align: center;
+  color: #7d7987;
+}
+
+.service__sub-title {
+  font-size: 24px;
+  color: #000;
+}
+
+.service__sub-text {
+  font-size: 16px;
+  color: #7d7987;
+}
+
+.provider__title {
+  font-size: 36px;
+  color: #000;
+}
+
+.provider__text {
+  font-size: 18px;
+  color: #7d7987;
+}
+
+.app__title {
+  font-size: 36px;
+  color: #000;
+}
+
+.app__text {
+  font-size: 18px;
+  color: #7d7987;
+}
