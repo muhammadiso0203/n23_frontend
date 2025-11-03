@@ -73,7 +73,7 @@ const Home = () => {
         <h2 className="text-[32px] font-semibold pb-8">Янги қўшилганлар</h2>
         <div className="flex gap-6">
           {book.map((item) => (
-            <BookCart key={item.id} img={item.img} name={item.name} title={item.title} star={item.star} />
+            <BookCart key={item.id} id={item.id} img={item.img} name={item.name} title={item.title} star={item.star} />
           ))}
         </div>
       </div>

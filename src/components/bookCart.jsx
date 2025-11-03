@@ -2,9 +2,9 @@ import { memo } from "react";
 import audio from "../assets/audio.svg"
 import book from "../assets/books.svg"
 
-const BookCart = ({ img, name, title, star }) => {
+const BookCart = ({ img, name, title, star, id }) => {
   return (
-    <div>
+    <div onClick={id}>
       <div className="w-[239px]">
         <img src={img} alt="" />
       </div>
