@@ -3,9 +3,14 @@ import { useGetUserList } from "./service/query/useGetUserList";
 import { CardLoading } from "@/components/card/card-loading";
 import { BackDrop } from "@/components/back-droup/back-drop";
 import { CreateUser } from "@/components/form/form";
+import { useSearchParams } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 export const Home = () => {
-  const { data, isLoading } = useGetUserList();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const page = Number(searchParams.get("page") || 1);
+  const { data, isLoading } = useGetUserList(page);
+  const buttons = Array(data?.pageSize || 1).fill(null);
 
   return (
     <div className="container">
@@ -17,9 +22,30 @@ export const Home = () => {
         </>
       ) : (
         <div>
-          {data?.map((item) => (
-            <Card key={item.id} {...item} />
+          {data?.data?.map((item) => (
+            <Card
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              email={item.email}
+              username={item.username}
+            />
           ))}
+          <div className="flex justify-center gap-2">
+            {buttons.map((_, index) => (
+              <Button
+                key={index}
+                onClick={() => setSearchParams({ page: `${index + 1}` })}
+                className={`cursor-pointer hover:bg-red-600 ${
+                  index + 1 === page ? "bg-blue-600" : ""
+                }`}
+                size={"icon"}
+              >
+                {" "}
+                {index + 1}
+              </Button>
+            ))}
+          </div>
         </div>
       )}
     </div>
